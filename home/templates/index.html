@@ -1,0 +1,8 @@
+{% extends "base_nav.html" %}
+
+{% block title %}Bem Vindo{% endblock %}
+
+{% block main %}
+    <h2>Olá {{ user.username }}</h2>
+    <a href="{% url 'logout' %}" class="btn btn-danger">Sair</a>
+{% endblock %}

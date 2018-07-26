@@ -1,0 +1,14 @@
+{% extends "base_nav.html" %}
+
+{% block title %}Lista de Clientes{% endblock %}
+
+{% block main %}
+    {% csrf_token %}
+    <h2>Lista de Clientes</h2>
+    <ul class="list-group">
+        {% for client in clients %}
+            <li class="list-group-item">{{ client.nome }}<br><a href="{% url 'client_update' client.id %}" class="btn btn-warning">Editar</a>  <a href="{% url 'client_delete' client.id %}" class="btn btn-danger">Excluir </a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'client_new' %}" class="btn btn-primary">Novo Cliente</a>
+{% endblock %}

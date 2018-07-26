@@ -1,0 +1,15 @@
+{% extends "base_nav.html" %}
+
+{% load bootstrap %}
+
+{% block title %}Lista de Clientes{% endblock %}
+
+{% block main %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+{% endblock %}
+
+
